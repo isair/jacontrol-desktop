@@ -470,7 +470,7 @@ public class App {
         gbc.insets = new Insets(8, 8, 0, 0);
         panel3.add(label6, gbc);
         final JLabel label7 = new JLabel();
-        label7.setText("Version: 0.1.1");
+        label7.setText("Version: 0.2.0");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 1;

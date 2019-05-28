@@ -199,7 +199,7 @@
                   <gridbag top="0" left="8" bottom="0" right="0" weightx="1.0" weighty="0.0"/>
                 </constraints>
                 <properties>
-                  <text value="Version: 0.1.1"/>
+                  <text value="Version: 0.2.0"/>
                 </properties>
               </component>
               <component id="8deb2" class="javax.swing.JTextPane" binding="aboutTextPane">
