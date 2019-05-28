@@ -3,9 +3,7 @@ package com.bsencan.jacontrol.desktop;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.regex.Matcher;
@@ -94,13 +92,28 @@ public class App {
         socket.send(packet);
 
         byte[] responseBuffer = new byte[32768];
+        boolean isCommandMultiResponse = command.equals("status");
 
         DatagramPacket response = new DatagramPacket(responseBuffer, responseBuffer.length);
         socket.setSoTimeout(5000);
         socket.receive(response);
+
+        StringBuilder fullResponse = new StringBuilder(new String(responseBuffer, 0, response.getLength()));
+
+        socket.setSoTimeout(1000);
+        for (short i = 0; i < (isCommandMultiResponse ? 2 : 0); i++) {
+            response = new DatagramPacket(responseBuffer, responseBuffer.length);
+            try {
+                socket.receive(response);
+                fullResponse.append(new String(responseBuffer, 0, response.getLength()));
+            } catch (SocketTimeoutException e) {
+                i = 2;
+            }
+        }
+
         socket.close();
 
-        return new String(responseBuffer, 0, response.getLength());
+        return fullResponse.toString();
     }
 
     //endregion
