@@ -20,3 +20,5 @@ It is a Java application and will work on Windows, OS X, and Linux. It is portab
 3. Make sure your commit messages conform to the standards explained [here](https://github.com/pvdlg/conventional-changelog-metahub#commit-types).
 
 4. Manually test your changes. Be thorough. You can write your own unit tests and integration tests as well but since there are no tests at the moment, this is not required.
+
+You can build a new JAR by running `gradle jar`. The file will be under `build/libs`.

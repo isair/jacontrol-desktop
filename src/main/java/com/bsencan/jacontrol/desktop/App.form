@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.bsencan.jacontrol.desktop.App">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="0" left="0" bottom="0" right="0"/>
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="666" height="400"/>
+      <xy x="20" y="20" width="666" height="476"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -13,12 +12,12 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="200" height="200"/>
           </grid>
+          <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="922c5" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="8" left="8" bottom="8" right="8"/>
+          <grid id="922c5" layout-manager="GridBagLayout">
             <constraints>
               <tabbedpane title="Send Commands"/>
             </constraints>
@@ -28,12 +27,14 @@
               <component id="ddef7" class="javax.swing.JComboBox" binding="serverComboBox">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="5.0" weighty="1.0"/>
                 </constraints>
                 <properties/>
               </component>
               <component id="1cdac" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <text value="Server"/>
@@ -42,6 +43,7 @@
               <component id="d7012" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <text value="Command"/>
@@ -52,31 +54,40 @@
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
+                  <gridbag weightx="4.0" weighty="1.0"/>
                 </constraints>
                 <properties/>
               </component>
               <component id="45d4c" class="javax.swing.JButton" binding="sendButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <text value="Send"/>
                 </properties>
               </component>
-              <component id="15b9d" class="javax.swing.JTextArea" binding="responseTextArea">
+              <scrollpane id="6a61">
                 <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
+                  <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="10.0"/>
                 </constraints>
-                <properties>
-                  <text value="Server response will be displayed here."/>
-                </properties>
-              </component>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="15b9d" class="javax.swing.JTextArea" binding="responseTextArea">
+                    <constraints/>
+                    <properties>
+                      <lineWrap value="true"/>
+                      <text value="Server response will be displayed here."/>
+                      <wrapStyleWord value="true"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
             </children>
           </grid>
-          <grid id="64886" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="8" left="8" bottom="8" right="8"/>
+          <grid id="64886" layout-manager="GridBagLayout">
             <constraints>
               <tabbedpane title="Manage Servers"/>
             </constraints>
@@ -86,6 +97,7 @@
               <component id="2c98" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <text value="Server Address"/>
@@ -96,12 +108,14 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
+                  <gridbag weightx="5.0" weighty="1.0"/>
                 </constraints>
                 <properties/>
               </component>
               <component id="4831b" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <text value="Server Name"/>
@@ -112,12 +126,14 @@
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
+                  <gridbag weightx="5.0" weighty="1.0"/>
                 </constraints>
                 <properties/>
               </component>
               <component id="6dfc3" class="javax.swing.JButton" binding="addServerButton" default-binding="true">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <text value="Add Server"/>
@@ -128,12 +144,14 @@
                   <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
+                  <gridbag weightx="1.0" weighty="10.0"/>
                 </constraints>
                 <properties/>
               </component>
               <component id="4f1d" class="javax.swing.JButton" binding="deleteSelectedButton" default-binding="true">
                 <constraints>
                   <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <text value="Delete Selected"/>
@@ -142,6 +160,7 @@
               <component id="dbdcf" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <text value="Rcon Password"/>
@@ -152,13 +171,13 @@
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
+                  <gridbag weightx="5.0" weighty="1.0"/>
                 </constraints>
                 <properties/>
               </component>
             </children>
           </grid>
-          <grid id="28263" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="8" left="8" bottom="8" right="8"/>
+          <grid id="28263" layout-manager="GridBagLayout">
             <constraints>
               <tabbedpane title="About"/>
             </constraints>
@@ -168,6 +187,7 @@
               <component id="905e9" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="8" left="8" bottom="0" right="0" weightx="1.0" weighty="0.0"/>
                 </constraints>
                 <properties>
                   <text value="Author: Baris Sencan &lt;baris@ilyssa.software&gt;"/>
@@ -176,25 +196,18 @@
               <component id="9cd19" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="0" left="8" bottom="0" right="0" weightx="1.0" weighty="0.0"/>
                 </constraints>
                 <properties>
                   <text value="Version: 0.1.1"/>
                 </properties>
               </component>
-              <vspacer id="7d84c">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="1" use-parent-layout="false">
-                    <minimum-size width="1" height="8"/>
-                    <preferred-size width="1" height="8"/>
-                    <maximum-size width="1" height="8"/>
-                  </grid>
-                </constraints>
-              </vspacer>
               <component id="8deb2" class="javax.swing.JTextPane" binding="aboutTextPane">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
+                  <gridbag top="0" left="8" bottom="8" right="8" weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
                   <editable value="false"/>
