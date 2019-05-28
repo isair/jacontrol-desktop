@@ -357,8 +357,7 @@ public class App {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panel1.add(sendButton, gbc);
-        responseTextArea = new JTextArea();
-        responseTextArea.setText("Server response will be displayed here.");
+        final JScrollPane scrollPane1 = new JScrollPane();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 2;
@@ -366,7 +365,12 @@ public class App {
         gbc.weightx = 1.0;
         gbc.weighty = 10.0;
         gbc.fill = GridBagConstraints.BOTH;
-        panel1.add(responseTextArea, gbc);
+        panel1.add(scrollPane1, gbc);
+        responseTextArea = new JTextArea();
+        responseTextArea.setLineWrap(true);
+        responseTextArea.setText("Server response will be displayed here.");
+        responseTextArea.setWrapStyleWord(true);
+        scrollPane1.setViewportView(responseTextArea);
         final JPanel panel2 = new JPanel();
         panel2.setLayout(new GridBagLayout());
         mainTabbedPane.addTab("Manage Servers", panel2);
@@ -383,7 +387,7 @@ public class App {
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 0;
-        gbc.weightx = 1.0;
+        gbc.weightx = 5.0;
         gbc.weighty = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -401,7 +405,7 @@ public class App {
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 2;
-        gbc.weightx = 1.0;
+        gbc.weightx = 5.0;
         gbc.weighty = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -448,7 +452,7 @@ public class App {
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 1;
-        gbc.weightx = 1.0;
+        gbc.weightx = 5.0;
         gbc.weighty = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
